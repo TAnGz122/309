@@ -1,8 +1,6 @@
 <?php
-// เรียกใช้ไฟล์เชื่อมต่อฐานข้อมูล
 require 'connect.php';
 
-// คำสั่ง SQL เพื่อดึงข้อมูลพนักงานและข้อมูลสำนักงานที่เกี่ยวข้อง
 $sql = "SELECT 
             e.employeeNumber, 
             e.lastName, 
@@ -45,7 +43,6 @@ $result = $conn->query($sql);
         <tbody>
             <?php
             if ($result->num_rows > 0) {
-                // วนลูปเพื่อแสดงข้อมูลแต่ละแถว
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . htmlspecialchars($row["employeeNumber"]) . "</td>";
@@ -58,10 +55,10 @@ $result = $conn->query($sql);
             } else {
                 echo "<tr><td colspan='5'>ไม่พบข้อมูล</td></tr>";
             }
-            // ปิดการเชื่อมต่อฐานข้อมูล
             $conn->close();
             ?>
         </tbody>
     </table>
 </body>
+
 </html>
