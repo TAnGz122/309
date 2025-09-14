@@ -1,8 +1,6 @@
 <?php
-// เรียกใช้ไฟล์เชื่อมต่อฐานข้อมูล
 require 'connect.php';
 
-// คำสั่ง SQL เพื่อนับจำนวนลูกค้าที่พนักงานแต่ละคนดูแล
 $sql = "SELECT
             e.employeeNumber,
             e.lastName,
@@ -61,4 +59,5 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 </body>
+
 </html>
