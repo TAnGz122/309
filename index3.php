@@ -1,8 +1,6 @@
 <?php
-// เรียกใช้ไฟล์เชื่อมต่อฐานข้อมูล
 require 'connect.php';
 
-// คำสั่ง SQL ค้นหาตามเงื่อนไข
 $sql = "SELECT
             o.orderNumber,
             od.productCode,
@@ -71,4 +69,5 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 </body>
+
 </html>
